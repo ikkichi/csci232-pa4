@@ -1,14 +1,12 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package outlab04;
+* Authors: Marielle Korringa, Rachel Angelsberg, Elizabeth Hamaoka
+* Date: 24 April 2018
+* Overview:
+*/
 
-/**
- *
- * @author ikkichi
- */
+
+package outlab4;
+
 public class Coins {
     
 }
