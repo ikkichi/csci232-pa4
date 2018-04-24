@@ -17,9 +17,11 @@ import static org.junit.Assert.*;
 public class Test {
 
     @Test
-    public void testSomeMethod() {
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    void testGetMinEmptyArray() {
+        int array[] = {};
+        int n = 24;
+        Exception e = assertThrows(IllegalArgumentException.class, () -> { /* ArrayUtils.coinChangeGreedy(array, n);*/ } );
+        assertEquals("Array of size 0 is not allowed", e.getMessage());
     }
 
     @Test
