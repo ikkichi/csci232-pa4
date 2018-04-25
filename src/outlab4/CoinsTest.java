@@ -20,7 +20,8 @@ public class Test {
     void testGetMinEmptyArray() {
         int array[] = {};
         int n = 24;
-        Exception e = assertThrows(IllegalArgumentException.class, () -> { /* ArrayUtils.coinChangeGreedy(array, n);*/ } );
+        int[] counter = new int[n];
+        Exception e = assertThrows(IllegalArgumentException.class, () -> { /* ArrayUtils.coinChangeGreedy(array, n, counter);*/ } );
         assertEquals("Array of size 0 is not allowed", e.getMessage());
     }
 
