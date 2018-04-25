@@ -1,7 +1,7 @@
 /*
 * Authors: Marielle Korringa, Rachel Angelsberg, Elizabeth Hamaoka
 * Date: 24 April 2018
-* Overview:
+* Overview: Dynamic programming solution to the change making problem and test cases to check
 */
 
 
