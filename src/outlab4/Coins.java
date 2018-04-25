@@ -8,7 +8,7 @@
 package outlab4;
 
 public class Coins {
-  		public static int counting(int[] array){ //method to count used elements in array
+	public static int counting(int[] array){ //method to count used elements in array
 		int num = 0;
 		int i = 0;
 		while(i < array.length){
@@ -33,7 +33,7 @@ public class Coins {
 		while(x < list.length){
 			list[x] = 0;
 			hold[x] = 0;
-			counter[x] = 0;
+			counter[x] = Integer.MAX_VALUE;
 			++x;
 		}
 		if(coins.length == 0) {
@@ -42,12 +42,13 @@ public class Coins {
 		int count = 0;
 		while(count < coins.length){
 			int i = count;
+			int change2 = change;
 			int y = 0; 
 			while(i < coins.length){
 				for(int v=0;v < list.length; ++v){
-					if(coins[i] <= change){
+					if(coins[i] <= change2){
 						list[y] = coins[i];
-						change = change-coins[i];
+						change2 = change2-coins[i];
 						++y;
 					}
 					if(coins[i] == 0){
@@ -60,25 +61,22 @@ public class Coins {
 				++i;
 			}
 			counter[count] = counting(list);
-			for(int r = 0; r > list.length; ++r){
+			for(int r = 0; r < coins.length; ++r){
 				if(counter[count] < counter[r]){
-					if(counter[r] != 0){
-						transfer(list, hold);
-						counter[r] = 0; 
-					}
+					transfer(list, hold);
 				}
 			}
 			++count;
 		}
 		System.out.println("Coins needed are: ");
 		int z = 0;
-		while(z < list.length){
-			if(list[z] != 0){
-				System.out.print(list[z]+",");
+		while(z < hold.length){
+			if(hold[z] != 0){
+				System.out.print(hold[z]+" ");
 			}
 			++z;
 		}
-		return list; 
+		return hold; 
 	}
 	/*public static void main(String[] args){
 		int[] coins = new int[4];
